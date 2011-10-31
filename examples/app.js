@@ -3,7 +3,9 @@
  * Module dependencies.
  */
 
-var express = require('express');
+var express = require('express')
+  , mongoose = require('mongoose')
+  ;
 
 var app = module.exports = express.createServer();
 
@@ -26,6 +28,10 @@ app.configure('development', function(){
 app.configure('production', function(){
   app.use(express.errorHandler()); 
 });
+
+// Db
+
+app.db = mongoose;
 
 // Modularization
 
