@@ -42,8 +42,8 @@ Modules.prototype._load = function () {
 
       root[node].name = node;
       root[node].path = nodePath;
-      root[node].c = t._loading(path.join(nodePath, 'controllers'));
-      root[node].m = t._loading(path.join(nodePath, 'models'));
+      root[node].controllers = t._loading(path.join(nodePath, 'controllers'));
+      root[node].models = t._loading(path.join(nodePath, 'models'));
 
       if (root[node].hasOwnProperty('router')) {
         root[node].router();
