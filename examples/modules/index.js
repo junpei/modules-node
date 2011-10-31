@@ -1,9 +1,6 @@
-var p = {
-  foo : function () {
-    return 'root';
-  }
-};
+var e = module.exports = {};
 
-module.exports = function (parent) {
-  return parent.define(p);
+e.auth = function (req, res, next) {
+  console.log('root.auth()');
+  next();
 };
