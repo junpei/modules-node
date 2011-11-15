@@ -85,8 +85,7 @@ Modules.prototype._loading = function (_path) {
     }
 
     else if (stats.isFile()) {
-      var o = require(nodePath);
-      objects[name] = (typeof o === 'function') ? o(t.server) : o;
+      objects[name] = require(nodePath);
     }
 
     else if (stats.isDirectory()) {
