@@ -139,6 +139,12 @@ Modules.prototype.del = function () {
   this._route('del', Array.apply(null, arguments));
 };
 
+Modules.prototype.error = function () {
+  var t = this;
+
+  t.server.error.apply(t.server, Array.apply(null, arguments))
+};
+
 module.exports = function (app) {
   var server = app || require('app');
   return new Modules(server);
